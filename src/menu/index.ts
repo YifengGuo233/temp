@@ -3,6 +3,8 @@ import { dasherize, classify } from '@angular-devkit/core';
 import { MenuOptions } from './schema';
 import { apply, filter, move, Rule, template, url, branchAndMerge, Tree, SchematicContext } from '@angular-devkit/schematics';
 import { normalize } from '@angular-devkit/core';
+import { addDeclarationToNgModule } from '../utils/ng-modules-utils';
+import { findModuleFromOptions } from '@schematics/angular/utility/find-module';
 
 const stringUtils = { dasherize, classify };
 
@@ -15,10 +17,12 @@ function filterTemplates(options: MenuOptions): Rule {
 
 export default function (options: MenuOptions): Rule {
 
-    // TODO: Validate options and throw SchematicsException if validation fails
-    options.path = options.path ? normalize(options.path) : options.path;
-    
-    const templateSource = apply(url('./files'), [
+    return (host: Tree, context: SchematicContext) => {
+
+      options.path = options.path ? normalize(options.path) : options.path;
+      options.module = options.module || findModuleFromOptions(host, options) || '';
+
+      const templateSource = apply(url('./files'), [
         filterTemplates(options),
         template({
           ...stringUtils,
@@ -26,20 +30,15 @@ export default function (options: MenuOptions): Rule {
         }),
         move(options.sourceDir)
       ]);
-      
 
-      return (host: Tree, context: SchematicContext) => {
+      const rule = chain([
+        branchAndMerge(chain([
+          addDeclarationToNgModule(options, options.export),
+          mergeWith(templateSource)
+        ])),
+      ]);
 
-        let rule = chain([
-          branchAndMerge(chain([
-            // addDeclarationToModule(),
-            mergeWith(templateSource)
-          ])),
-        ]);
+      return rule(host, context);
 
-        return rule(host, context);
-  
-
-      }
-
+    }
 }

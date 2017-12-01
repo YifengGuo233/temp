@@ -5,4 +5,7 @@ export interface MenuOptions {
     path: string;
     sourceDir: string;
     menuService: boolean;
+
+    module: string;
+    export: boolean;
 }
