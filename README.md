@@ -5,9 +5,11 @@ This repository is a basic Schematic implementation that serves as a starting po
 
 <details>
 <summary>Hint</summary>
-  ```HTML
-    <b>test</b>  
-  ```    
+<p>
+```HTML
+  <b>test</b>  
+```
+</p>
 </details>
 
 
