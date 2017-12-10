@@ -7,11 +7,9 @@ This repository is a basic Schematic implementation that serves as a starting po
 <summary>Hint</summary>
   
 <p>
-
 ```HTML
 <b>test</b>  
 ```
-
 </p>
 </details>
 
