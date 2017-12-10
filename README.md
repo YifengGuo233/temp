@@ -18,16 +18,16 @@ This repository is a basic Schematic implementation that serves as a starting po
 1. Bla
   Bla Bla Bla
   
-  <details>
-  <summary>Hint</summary>
-  <p>
+    <details>
+    <summary>Hint</summary>
+    <p>
 
-  ```HTML
-  <b>test</b>  
-  ```
+    ```HTML
+    <b>test</b>  
+    ```
 
-  </p>
-  </details>
+    </p>
+    </details>
 
 
 ### Testing
