@@ -5,13 +5,29 @@ This repository is a basic Schematic implementation that serves as a starting po
 
 <details>
 <summary>Hint</summary>
-  
 <p>
+  
 ```HTML
 <b>test</b>  
 ```
+
 </p>
 </details>
+
+
+1. Bla
+  Bla Bla Bla
+  
+  <details>
+  <summary>Hint</summary>
+  <p>
+
+  ```HTML
+  <b>test</b>  
+  ```
+
+  </p>
+  </details>
 
 
 ### Testing
