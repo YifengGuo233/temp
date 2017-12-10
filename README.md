@@ -16,6 +16,7 @@ This repository is a basic Schematic implementation that serves as a starting po
 
 
 1. Bla
+
   Bla Bla Bla
   
     <details>
