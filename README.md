@@ -9,7 +9,7 @@ This repository is a basic Schematic implementation that serves as a starting po
 <p>
 
 ```HTML
-  <b>test</b>  
+<b>test</b>  
 ```
 
 </p>
